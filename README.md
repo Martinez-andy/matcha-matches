@@ -7,8 +7,8 @@ Doing so will alter the links such that they redirect you to their to the altern
 Each of these games are local two-player games, although an introduction of 
 a multi-player option is on its way. Please try them out and more importantly, have fun!
 <br>
-- Frameworks: Django and React.js
-- Contributors: Andy Martinez and Dalia Poblano
+- **Frameworks:** Django and React.js
+- **Contributors:** Andy Martinez and Dalia Poblano
 
 ## Tic-Tac-Tea:
 
