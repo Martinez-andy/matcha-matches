@@ -1,5 +1,6 @@
 # Matcha Matches:
 - Frameworks: Django and React.js
+<br>
 Matcha matches is a web application that contains tic-tac-toe, four in a row, and checkers. 
 In addtion to these traditional games, we have also implemented "twisted" versions of each of these games.
 The rules and descriptions for these "twisted" versions are below. To switch the games into their twisted version,
