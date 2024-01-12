@@ -15,4 +15,6 @@ Tic-Tac-Tea is inspired by the ultimate Tic Tac Toe game. In this game, there's 
 
 ## Coco Connect:
 
+
 ## Checkers Chai:
+Bringing checkers to another level, Checkers Chai is composed of ONLY royal pieces. Normally, checker pieces that are not royal can only move diagnolly forward on the dark squares. In Checkers Chai, the players can move the checker pieces both forward and backwards on the dark sqaures since the pieces are royal.
