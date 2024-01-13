@@ -6,7 +6,6 @@ from django.shortcuts import render
 def index(request):
     return render(request, "matcha_matches/index.html")
 
-
 # Redirects the user to the normal tic-tac-toe application
 def ticTacToe(request):
     return
