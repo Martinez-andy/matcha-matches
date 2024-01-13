@@ -1,5 +1,5 @@
 /* Handles the green block at the top of every page */
-#header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,14 +13,27 @@
   z-index: 100;
 }
 
+.twisted-header {
+  background: #E4D9B5 !important;
+  color: #51734B !important;
+}
+
 .logo {
   font-size: 32px;
   color: #E4D9B5;
   font-weight: 700;
 }
 
+.twisted-logo {
+  color: #51734B;
+}
+
 .logo:hover {
   color: #E4D9B5;
+}
+
+.twisted-logo:hover {
+  color: #51734B;
 }
 
 .navbar {
@@ -30,7 +43,15 @@
 
 .navbar:hover {
   color: #E4D9B5;
+}
+
+.twisted-navbar {
+  color: #51734B;
   font-size: 18px;
+}
+
+.twisted-navbar:hover {
+  color: #51734B;
 }
 
 .pageName {
@@ -44,10 +65,17 @@
   justify-content: center;
 }
 
-main {
+.twisted-pageName {
+  color: #51734B !important;
+}
+
+.main {
   background-color: #E4D9B5;
-  color: #E4D9B5;
   height: 820px;
+}
+
+.twisted-main {
+  background-color: #51734B !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

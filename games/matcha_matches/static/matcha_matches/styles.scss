@@ -4,7 +4,7 @@ $black: #000000;
 $white: white;
 
 /* Handles the green block at the top of every page */
-#header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -18,15 +18,40 @@ $white: white;
     z-index: 100;
 } 
 
+.twisted-header {
+    background: $cream !important;
+    color: $dark-green !important;
+}
+
+
+
+
+
+
 .logo {
     font-size: 32px;
     color: $cream;
     font-weight: 700;
 }
 
+.twisted-logo {
+    color: $dark-green;
+}
+
+
+
+
+
 .logo:hover {
     color: $cream;
 }
+
+.twisted-logo:hover {
+    color: $dark-green;
+}
+
+
+
 
 .navbar {
     color: $cream;
@@ -35,8 +60,22 @@ $white: white;
 
 .navbar:hover {
     color: $cream;
+}
+
+
+.twisted-navbar {
+    color: $dark-green;
     font-size: 18px;
 }
+
+.twisted-navbar:hover {
+    color: $dark-green;
+}
+
+
+
+
+
 
 .pageName {
     color: $cream;
@@ -49,8 +88,15 @@ $white: white;
     justify-content: center;
 }
 
-main {
+.twisted-pageName {
+    color: $dark-green !important;
+}
+
+.main {
     background-color: $cream;
-    color: $cream;
     height: 820px;
+}
+
+.twisted-main {
+    background-color: $dark-green !important;
 }

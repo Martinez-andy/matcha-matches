@@ -9,17 +9,17 @@
         {% block script %}{% endblock script %}
     </head>
     <body>
-        <header class="header">
-            <a href="{% url 'index'%}" class="logo">Matcha Matches</a>
+        <header class="header twisted-header">
+            <a href="{% url 'index'%}" class="logo twisted-logo">Matcha Matches</a>
 
             <nav>
-                <a href="" class="navbar">Contact Us</a>
+                <a href="" class="navbar twisted-navbar">Contact Us</a>
             </nav>
         </header>
-        <div class="pageName">
+        <div class="pageName twisted-pageName">
             {% block pageName %}{% endblock pageName %}
         </div>
-        <main class="main">
+        <main class="twisted-main">
             {% block main %}{% endblock main %}
         </main>
     </body>
