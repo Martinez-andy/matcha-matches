@@ -119,6 +119,8 @@
   font-size: 20px;
   color: #51734B;
   text-align: right;
+  position: sticky;
+  top: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */
