@@ -121,3 +121,14 @@ $twisted-dark: #6F4E37;
     background-color: $twisted-light;
     height: 820px;
 }
+
+.play-stage {
+    border:5px solid black;
+    z-index: 102;
+    height: 85%;
+    width: 60%;
+    justify-content: center;
+    top: 125px;
+    position: sticky;
+    margin: auto;
+}
