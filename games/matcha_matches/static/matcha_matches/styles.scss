@@ -1,8 +1,53 @@
-$dark-green: springgreen;
-$cream: beige;
+$dark-green: #51734B;
+$cream: #E4D9B5;
 $black: #000000;
 $white: white;
 
-#forehead {
-    color: $dark-green;
+/* Handles the green block at the top of every page */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 50px;
+    background: $dark-green;
+    color: $cream;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
 } 
+
+.logo {
+    font-size: 32px;
+    color: $cream;
+    font-weight: 700;
+}
+
+.logo:hover {
+    color: $cream;
+}
+
+.navbar {
+    color: $cream;
+    font-size: 18px;
+}
+
+.navbar:hover {
+    color: $cream;
+    font-size: 18px;
+}
+
+.pageName {
+    color: $cream;
+    font-size: 200px;
+    align-items: center;
+    z-index: 150;
+}
+
+
+
+
+main {
+    background-color: $cream;
+}
