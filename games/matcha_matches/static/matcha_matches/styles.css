@@ -108,4 +108,11 @@
   margin: auto;
 }
 
+#additionals {
+  font-size: 20px;
+  color: #51734B;
+  top: 150px;
+  position: sticky;
+}
+
 /*# sourceMappingURL=styles.css.map */
