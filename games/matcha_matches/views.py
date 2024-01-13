@@ -18,12 +18,12 @@ def ticTacTea(request):
 
 # Redirects the user to the normal checkers application
 def checkers(request):
-    return render(request, "")
+    return render(request, "matcha_matches/checkers.html")
     
     
 # Redirects the user to the "twisted checkers" application, AKA Checkers chai
-def chai(requset):
-    return
+def chai(request):
+    return render(request, "matcha_matches/chai.html")
 
 
 # Redirects user to the 4-in-a-row application
