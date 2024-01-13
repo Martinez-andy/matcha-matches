@@ -108,11 +108,17 @@
   margin: auto;
 }
 
-#additionals {
+.rules {
   font-size: 20px;
   color: #51734B;
-  top: 150px;
+  top: 100px;
   position: sticky;
+}
+
+.brew {
+  font-size: 20px;
+  color: #51734B;
+  text-align: right;
 }
 
 /*# sourceMappingURL=styles.css.map */

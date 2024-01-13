@@ -133,12 +133,20 @@ $twisted-dark: #6F4E37;
     margin: auto;
 }
 
-#additionals {
+
+
+.rules {
     font-size:20px;
     color: $dark;
-    top: 150px;
+    top: 100px;
     position:sticky;
-    
+}
 
+.brew {
+     font-size:20px;
+     color:$dark;
+     text-align:right;
+     
 
 }
+
