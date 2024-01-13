@@ -43,8 +43,14 @@ $white: white;
     font-size: 30px;
     z-index: 101;
     top: 50px;
-    position: relative;
+    position: sticky;
     display: flex;
     font-weight: 600;
     justify-content: center;
+}
+
+main {
+    background-color: $cream;
+    color: $cream;
+    height: 820px;
 }
