@@ -8,17 +8,17 @@ def index(request):
 
 # Redirects the user to the normal tic-tac-toe application
 def ticTacToe(request):
-    return
+    return render(request, "matcha_matches/toe.html")
 
 
 # Redirects the user to the "twisted" tic-tac-toe application, AKA tic-tac-tea
 def ticTacTea(request):
-    return
+    return render(request, "matcha_matches/tea.html")
 
 
 # Redirects the user to the normal checkers application
 def checkers(request):
-    return
+    return render(request, "")
     
     
 # Redirects the user to the "twisted checkers" application, AKA Checkers chai
