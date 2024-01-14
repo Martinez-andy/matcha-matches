@@ -2,5 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var toe_1 = require("./toe");
 var board = new toe_1.Board();
+board.makeMove(0, 0, "X");
+board.makeMove(1, 1, "O");
+board.makeMove(0, 1, "X");
+board.makeMove(0, 2, "O");
+board.makeMove(1, 0, "X");
+board.makeMove(2, 0, "O");
+board.makeMove(2, 1, "X");
 console.log(board);
-console.log(board.emptySlots());
