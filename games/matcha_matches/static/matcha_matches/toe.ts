@@ -38,6 +38,14 @@ class Board {
 
     // TO-DO: Implement method that determines if the board has a winner
     hasWinner() : boolean {
+        // Edge slots have 2 possible wins
+
+        // Corner slots have 3 possible wins
+
+        // Middle slot has 4 possible wins
+
+        /* I don't think you need to check the winning positions for bottom right or [3, 2] or [2, 3] 
+        because checking the other cases should do that for you, good luck Dalia :) */
         return false;
     }
 
@@ -53,4 +61,19 @@ class Board {
         // Returns true if the move is valid and false if not
         return withinRange && this.board[x][y] === " ";
     }
+}
+
+
+// TO-DO: Make sure to implement the hasWinner method before creating the function
+/* TO-DO: implement the game function. A lot of the needed methods are implemented in the class above.
+    Google what classes and objects are and how to deal with them in javascript.
+    Note: This file is written in TypeScript, it is basically javascript but we must define types for each variable 
+    and for each function. Remember that hasWinner returns a boolean value, so consider implementing the game using some
+    sort of loop, where the game continues so long as there is a winner and there are free slots on the board.
+    Read the comments in the class above to figure out what the methods do, what values they return and how you can use
+    them to create the rest of the game. Good luck, Dalia! :)
+*/
+
+function game() {
+
 }
