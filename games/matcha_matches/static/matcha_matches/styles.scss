@@ -135,20 +135,60 @@ $twisted-dark: #6F4E37;
 
 
 
-.rules {
-    font-size:20px;
-    color: $dark;
+
+
+
+
+
+
+
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: $twisted-dark;
+    transition: .4s;
+    border-radius: 10px;
+}
+
+
+.switch input {display: none;}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 5px;
+    top: -5px;
+    bottom: 5px;
+    background-color: $dark;
+    transition: 0.4s;
+    border-radius: 50px;
+    z-index: 102;
+}
+
+input:checked + .slider {
+    background-color: $twisted-dark;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px); 
+}
+
+
+
+
+
+
+.testing {
     top: 100px;
-    position:sticky;
-    
+    position: absolute;
+    justify-content: space-between;
+    display: flex;
+    color: $dark;
+    width: 90%;
+    margin-top: 0px;
+    margin-left: 55px;
+    margin-right: 50px;
 }
-
-.brew {
-     font-size:20px;
-     color:$dark;
-     text-align: right;
-     position: sticky;
-     top:100px;
-
-}
-
