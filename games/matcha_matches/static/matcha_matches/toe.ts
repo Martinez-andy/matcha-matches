@@ -37,7 +37,17 @@ class Board {
     }
 
     // TO-DO: Implement method that determines if the board has a winner
-    hasWinner() : boolean {
+    hasWinner(row:number, column:number, player:string) : boolean {
+         for (let row=0; row < this.board.length; row++){
+            if(this.board[row])
+            for (let col = 0; col < this.board[0].length; col++){
+                if (this.board[row] === )
+            }
+
+            }
+            
+         }
+
         return false;
     }
 
