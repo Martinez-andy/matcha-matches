@@ -60,6 +60,12 @@ class Board {
         // Returns true if the move is valid and false if not
         return withinRange && this.board[x][y] === " ";
     }
+
+    printBoard() : void {
+        for (let row = 0; row < this.board.length; row++) {
+            console.log(this.board[row]);
+        }
+    }
 }
 
 

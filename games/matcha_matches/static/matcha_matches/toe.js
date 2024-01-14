@@ -50,6 +50,11 @@ var Board = /** @class */ (function () {
         // Returns true if the move is valid and false if not
         return withinRange && this.board[x][y] === " ";
     };
+    Board.prototype.printBoard = function () {
+        for (var row = 0; row < this.board.length; row++) {
+            console.log(this.board[row]);
+        }
+    };
     return Board;
 }());
 exports.Board = Board;
