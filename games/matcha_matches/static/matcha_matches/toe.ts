@@ -15,7 +15,6 @@ class Board {
     // Takes in a row and column and also a player's string (e.g. "X" or "O") as input
     // Executes move and returns true if the move is valid
     // Returns false, otherwise
-    // TO-DO: IMPLEMENT validMove
     makeMove(row: number, col: number, player: string): boolean {
         if (this.validMove([row, col])) {
             this.board[row][col] = player;
