@@ -36,16 +36,24 @@ class Board {
     }
 
     // TO-DO: Implement method that determines if the board has a winner
-    hasWinner() : boolean {
-        // Edge slots have 2 possible wins
-
-        // Corner slots have 3 possible wins
-
-        // Middle slot has 4 possible wins
-
-        /* I don't think you need to check the winning positions for bottom right or [3, 2] or [2, 3] 
-        because checking the other cases should do that for you, good luck Dalia :) */
-
+      hasWinner() : boolean {
+        // value variable will store the "X" or "O" that the player placed on [row][col] on the board 
+        for (let row=0; row < this.board.length; row++){
+            for (let col=0;col < this.board[0].length;col++){
+                let value = this.board[row][col];
+                let count = 0;
+                while(count = 3){
+                    if(value === value) {
+                        count++;
+                        return true;
+                    }
+                    else{
+                        count=-1;
+                        return false;
+                    }
+                }
+            }
+        }
         return false;
     }
 
