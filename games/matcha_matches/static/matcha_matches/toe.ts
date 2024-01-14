@@ -36,7 +36,7 @@ class Board {
         return false;
     }
 
-    // 
+    // TO-DO: Implement method that determines if the board has a winner
     hasWinner() : boolean {
         return false;
     }
@@ -45,8 +45,12 @@ class Board {
     // Takes a "move" as input
     // Moves are lists with 2 elements formatted as -> [row, col]
     // First element represents the tic-tac-toe row and the second the column.
-    // TO-DO: IMPLEMENT VALID MOVE
     validMove(move) : boolean {
-        return false;
+        let [x, y] : [number, number]= move;
+
+        // Determines if the move numbers valid board spots
+        let withinRange : boolean = 0 <= x && x < 3 && 0 <= y && y < 3;
+        // Returns true if the move is valid and false if not
+        return withinRange && this.board[x][y] === " ";
     }
 }
