@@ -142,7 +142,7 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
-.testing {
+.rules-brew {
   top: 100px;
   position: absolute;
   justify-content: space-between;
