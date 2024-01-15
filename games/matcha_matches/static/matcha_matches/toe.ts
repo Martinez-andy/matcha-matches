@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+import * as promptSync from 'prompt-sync';
 
 class Board {
     // Declares board's type
@@ -110,10 +111,21 @@ class Board {
             console.log(this.board[row]);
         }
     }
+
+    userInput(): number[] {
+        let row : number;
+        let col : number;
+        let prompt = promptSync();
+        do {
+            let rowStr = prompt("row number: ");
+            let colStr = prompt("col number: ");
+            row = parseInt(rowStr);
+            col = parseInt(colStr); 
+        } while(!this.validMove([row, col]));
+        return [row, col];
+    }
 }
 
-
-export { Board };
 
 
 // TO-DO: Make sure to implement the hasWinner method before creating the function
@@ -126,6 +138,25 @@ export { Board };
     them to create the rest of the game. Good luck, Dalia! :)
 */
 
-function game() {
+function game() : void {
+    let players = ["X", "O"];
+    let turn = 0;
+    let board : Board = new Board();
 
+    do {
+        let player : string = players[turn % 2];
+        board.printBoard();
+        let [row, col] = board.userInput();
+        board.makeMove(row, col, player);
+        if (board.hasWinner()) {
+            console.log(`Player ${player} has won!`);
+        }
+        turn++;
+    } while(!board.hasWinner() && board.emptySlots());
+    if (!board.emptySlots()) {
+        console.log("There was a tie!")
+    }
 }
+
+
+export { Board, game };

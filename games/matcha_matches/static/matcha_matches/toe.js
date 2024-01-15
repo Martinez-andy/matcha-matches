@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Board = void 0;
+exports.game = exports.Board = void 0;
 var _ = require("lodash");
+var promptSync = require("prompt-sync");
 var Board = /** @class */ (function () {
     // Initializes the board
     function Board() {
@@ -90,6 +91,18 @@ var Board = /** @class */ (function () {
             console.log(this.board[row]);
         }
     };
+    Board.prototype.userInput = function () {
+        var row;
+        var col;
+        var prompt = promptSync();
+        do {
+            var rowStr = prompt("row number: ");
+            var colStr = prompt("col number: ");
+            row = parseInt(rowStr);
+            col = parseInt(colStr);
+        } while (!this.validMove([row, col]));
+        return [row, col];
+    };
     return Board;
 }());
 exports.Board = Board;
@@ -103,4 +116,21 @@ exports.Board = Board;
     them to create the rest of the game. Good luck, Dalia! :)
 */
 function game() {
+    var players = ["X", "O"];
+    var turn = 0;
+    var board = new Board();
+    do {
+        var player = players[turn % 2];
+        board.printBoard();
+        var _a = board.userInput(), row = _a[0], col = _a[1];
+        board.makeMove(row, col, player);
+        if (board.hasWinner()) {
+            console.log("Player ".concat(player, " has won!"));
+        }
+        turn++;
+    } while (!board.hasWinner() && board.emptySlots());
+    if (!board.emptySlots()) {
+        console.log("There was a tie!");
+    }
 }
+exports.game = game;
