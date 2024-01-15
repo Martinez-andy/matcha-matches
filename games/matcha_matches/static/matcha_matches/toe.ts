@@ -146,6 +146,7 @@ function game() : void {
     do {
         let player : string = players[turn % 2];
         board.printBoard();
+        console.log(`Player ${player}'s turn`)
         let [row, col] = board.userInput();
         board.makeMove(row, col, player);
         if (board.hasWinner()) {
@@ -153,7 +154,9 @@ function game() : void {
         }
         turn++;
     } while(!board.hasWinner() && board.emptySlots());
-    if (!board.emptySlots()) {
+
+    if (!board.emptySlots() && !board.hasWinner()) {
+        board.printBoard();
         console.log("There was a tie!")
     }
 }
