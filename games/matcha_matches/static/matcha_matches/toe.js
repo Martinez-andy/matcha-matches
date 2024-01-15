@@ -1,11 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Board = void 0;
+var _ = require("lodash");
 var Board = /** @class */ (function () {
     // Initializes the board
     function Board() {
         this.board = [
             [" ", " ", " "],
+            [" ", " ", " "],
+            [" ", " ", " "],
+        ];
+        this.columns = [
+            [" ", " ", " "],
+            [" ", " ", " "],
+            [" ", " ", " "],
+        ];
+        this.diagonals = [
             [" ", " ", " "],
             [" ", " ", " "],
         ];
@@ -16,6 +26,16 @@ var Board = /** @class */ (function () {
     Board.prototype.makeMove = function (row, col, player) {
         if (this.validMove([row, col])) {
             this.board[row][col] = player;
+            // Adds player's symbol to columns
+            this.columns[col][row] = player;
+            // Adds player's symbol to diagonal that goes from top left to bottom right
+            if (row === col) {
+                this.diagonals[0][row] = player;
+            }
+            // Add player's symbol to diagonal that goes from top right to bottom left
+            if (row === 2 - col) {
+                this.diagonals[1][row] = player;
+            }
             return true;
         }
         return false;
@@ -31,13 +51,28 @@ var Board = /** @class */ (function () {
         }
         return false;
     };
-    // TO-DO: Implement method that determines if the board has a winner
     Board.prototype.hasWinner = function () {
-        // Edge slots have 2 possible wins
-        // Corner slots have 3 possible wins
-        // Middle slot has 4 possible wins
-        /* I don't think you need to check the winning positions for bottom right or [3, 2] or [2, 3]
-        because checking the other cases should do that for you, good luck Dalia :) */
+        // Iterate through every row
+        var xWin = ["X", "X", "X"];
+        var oWin = ["O", "O", "O"];
+        for (var i = 0; i < this.board.length; i++) {
+            // Checks diagonals for winning positions
+            if (i < 3) {
+                var diag = this.diagonals[i];
+                if (_.isEqual(diag, xWin) || _.isEqual(diag, oWin)) {
+                    return true;
+                }
+            }
+            // Checks columns for wining position
+            var cols = this.columns[i];
+            if (_.isEqual(cols, xWin) || _.isEqual(cols, oWin)) {
+                return true;
+            }
+            var rows = this.board[i];
+            if (_.isEqual(rows, xWin) || _.isEqual(rows, oWin)) {
+                return true;
+            }
+        }
         return false;
     };
     // Takes a "move" as input
