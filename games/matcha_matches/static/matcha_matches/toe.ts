@@ -142,7 +142,7 @@ function game() : void {
     // List of players
     let players = ["X", "O"];
 
-    // turn keeps track of whose turn it is using the modulo operator. AKA turn 0 -> X, turn 1 -> O ect.
+    // turn keeps track of whose turn it is 
     let turn = 0;
 
     // Uses the board class to initialize a new board
@@ -150,24 +150,22 @@ function game() : void {
 
     // Loops over the logic while no one has won the game yet and while there are playable slots.
     do {
-        // Keeps which player is going to move
+        // Keeps track of which player is going to move
         let player : string = players[turn % 2];
 
         // Prints the board (built into the board class)
         board.printBoard();
         console.log(`Player ${player}'s turn`)
 
-        // Takes int a valid move input (keeps asking until move is valid) also built into the board class
+        // Takes in a valid move input (keeps asking until move is valid) also built into the board class
         let [row, col] = board.userInput();
 
         // We know move is valid so we can blindly execute the move
         board.makeMove(row, col, player);
 
-        // Checks if someone has won, if they have then it declares it and stops the game.
         if (board.hasWinner()) {
             console.log(`Player ${player} has won!`);
         }
-        // Switches to next person's turn
         turn++;
     } while(!board.hasWinner() && board.emptySlots());
 
