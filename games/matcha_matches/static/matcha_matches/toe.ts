@@ -66,12 +66,13 @@ class Board {
 
 
     hasWinner() : boolean {
-        // Iterate through every row
+        // Set variables for when either player wins (will be used in the comparisons)
         let xWin : string[] = ["X", "X", "X"];
         let oWin : string[] = ["O", "O", "O"];
 
+        // Iterate through every row
         for (let i = 0; i < this.board.length; i++) {
-            // Checks diagonals for winning positions
+            // Checks diagonals for winning positions (i < 3 b/c only 2 diagonals)
             if (i < 3) {
                 let diag = this.diagonals[i]
                 if (_.isEqual(diag, xWin) || _.isEqual(diag, oWin)) {
@@ -84,12 +85,14 @@ class Board {
             if (_.isEqual(cols, xWin) || _.isEqual(cols, oWin)) {
                 return true;
             }
-
+            
+            // Checks rows for winning position
             let rows = this.board[i]
             if (_.isEqual(rows, xWin) || _.isEqual(rows, oWin)) {
                 return true;
             }
         }
+        // If we make it here that means no winners exist so return false
         return false;
     }
 
@@ -106,12 +109,15 @@ class Board {
         return withinRange && this.board[x][y] === " ";
     }
 
+    // Used for a pretty visualiztion of the board
     printBoard() : void {
         for (let row = 0; row < this.board.length; row++) {
             console.log(this.board[row]);
         }
     }
 
+    // Abstracts away getting user input. 
+    // Implements a do-while loop to enforce proper inputs
     userInput(): number[] {
         let row : number;
         let col : number;
@@ -120,7 +126,10 @@ class Board {
             let rowStr = prompt("row number: ");
             let colStr = prompt("col number: ");
             row = parseInt(rowStr);
-            col = parseInt(colStr); 
+            col = parseInt(colStr);
+            if ( 0 >= Math.min(row, col) || Math.max(row, col) > 2) {
+                console.log("Input must be in bounds [0, 2]")
+            }
         } while(!this.validMove([row, col]));
         return [row, col];
     }

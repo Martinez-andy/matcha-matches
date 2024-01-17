@@ -53,11 +53,12 @@ var Board = /** @class */ (function () {
         return false;
     };
     Board.prototype.hasWinner = function () {
-        // Iterate through every row
+        // Set variables for when either player wins (will be used in the comparisons)
         var xWin = ["X", "X", "X"];
         var oWin = ["O", "O", "O"];
+        // Iterate through every row
         for (var i = 0; i < this.board.length; i++) {
-            // Checks diagonals for winning positions
+            // Checks diagonals for winning positions (i < 3 b/c only 2 diagonals)
             if (i < 3) {
                 var diag = this.diagonals[i];
                 if (_.isEqual(diag, xWin) || _.isEqual(diag, oWin)) {
@@ -69,11 +70,13 @@ var Board = /** @class */ (function () {
             if (_.isEqual(cols, xWin) || _.isEqual(cols, oWin)) {
                 return true;
             }
+            // Checks rows for winning position
             var rows = this.board[i];
             if (_.isEqual(rows, xWin) || _.isEqual(rows, oWin)) {
                 return true;
             }
         }
+        // If we make it here that means no winners exist so return false
         return false;
     };
     // Takes a "move" as input
@@ -86,11 +89,14 @@ var Board = /** @class */ (function () {
         // Returns true if the move is valid and false if not
         return withinRange && this.board[x][y] === " ";
     };
+    // Used for a pretty visualiztion of the board
     Board.prototype.printBoard = function () {
         for (var row = 0; row < this.board.length; row++) {
             console.log(this.board[row]);
         }
     };
+    // Abstracts away getting user input. 
+    // Implements a do-while loop to enforce proper inputs
     Board.prototype.userInput = function () {
         var row;
         var col;
@@ -100,6 +106,9 @@ var Board = /** @class */ (function () {
             var colStr = prompt("col number: ");
             row = parseInt(rowStr);
             col = parseInt(colStr);
+            if (0 >= Math.min(row, col) || Math.max(row, col) > 2) {
+                console.log("Input must be in bounds [0, 2]");
+            }
         } while (!this.validMove([row, col]));
         return [row, col];
     };
